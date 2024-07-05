@@ -1,6 +1,6 @@
 package org.example.e6;
 
-public class E6AirthmeticOperations {
+public class E6ArithmeticOperations {
     public static void main(String[] args) {
         // Step 1: Declare the float variable and set it to 8.2
 

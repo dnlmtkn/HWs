@@ -1,6 +1,6 @@
-package e8test;
+package e9test;
 
-import org.example.e11.E11StringConcatenation;
+import org.example.e9.E9StringConcatenation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-class E8StringConcatenationTester {
+class E9StringConcatTester {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -26,13 +26,13 @@ class E8StringConcatenationTester {
     }
 
     @Test
-    void testStringConcatenation() {
-        E11StringConcatenation.main(new String[]{});
-        String expectedOutput = "syntaxtechs.com" + System.lineSeparator();
+    void testFullNameConcatenation() {
+        E9StringConcatenation.main(new String[]{});
+        String expectedOutput = "John Smith" + System.lineSeparator();
 
         String failureMessage = "The output does not match the expected values.\n" +
-                "Please ensure that your program creates a variable with the value 'syntax',\n" +
-                "creates a variable with the value 'techs.com', and prints them concatenated.";
+                "Please ensure that your program creates a variable with the value 'John',\n" +
+                "creates a variable with the value 'Smith', and prints them concatenated with a space in between.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }

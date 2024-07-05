@@ -1,6 +1,6 @@
 package org.example.e8;
 
-public class E8AirthmeticOperations {
+public class E8ArithmeticOperations {
     public static void main(String[] args) {
         // Step 1: Declare the integer variables and assign values
 
