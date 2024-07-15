@@ -1,5 +1,7 @@
 package org.example.e42;
 
+import java.util.Scanner;
+
 public class E42SwitchClass {
     public static void main(String[] args) {
         // Create a Scanner object to read input
@@ -8,21 +10,15 @@ public class E42SwitchClass {
         // Capture the day of the week input
 
         // Suggest activity using switch statement
-        // Case 1
-        //    Print "Activity: Go to the gym"
-        // Case 2
-        //    Print "Activity: Attend a coding meetup"
-        // Case 3
-        //    Print "Activity: Go for a mid-week run"
-        // Case 4
-        //    Print "Activity: Take a cooking class"
-        // Case 5
-        //    Print "Activity: Movie night"
-        // Case 6
-        //    Print "Activity: Family day"
-        // Case 7
-        //    Print "Activity: Relax and recharge"
-        // Default
-        //    Print "Invalid day entered"
+
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Print prompt for user to enter the day of the week
+        System.out.println("Enter the day of the week (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)");
+        int dayOfWeek = scanner.nextInt();
+
+        // Suggest activity using switch statement
+
     }
 }

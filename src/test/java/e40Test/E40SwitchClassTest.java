@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E40SwitchClassTester {
+class E40SwitchClassTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -36,11 +36,9 @@ class E40SwitchClassTester {
 
         E40SwitchClass.main(new String[]{});
         String expectedOutput = "Enter name of the instructor" + System.lineSeparator() +
-                                "Asghar" + System.lineSeparator() +
-                                "Will take care of Java Assignment" + System.lineSeparator();
+                "Will take care of Java Assignment" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Asghar.\n" +
-                "Please ensure that your program captures the input correctly and determines the responsibility.";
+        String failureMessage = "The output does not match the expected values for Asghar.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -52,11 +50,9 @@ class E40SwitchClassTester {
 
         E40SwitchClass.main(new String[]{});
         String expectedOutput = "Enter name of the instructor" + System.lineSeparator() +
-                                "Moazzam" + System.lineSeparator() +
-                                "Will take care of SDLC Assignment" + System.lineSeparator();
+                "Will take care of SDLC Assignment" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Moazzam.\n" +
-                "Please ensure that your program captures the input correctly and determines the responsibility.";
+        String failureMessage = "The output does not match the expected values for Moazzam.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -68,11 +64,9 @@ class E40SwitchClassTester {
 
         E40SwitchClass.main(new String[]{});
         String expectedOutput = "Enter name of the instructor" + System.lineSeparator() +
-                                "Weqas" + System.lineSeparator() +
-                                "Will take care of Selenium Assignment" + System.lineSeparator();
+                "Will take care of Selenium Assignment" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Weqas.\n" +
-                "Please ensure that your program captures the input correctly and determines the responsibility.";
+        String failureMessage = "The output does not match the expected values for Weqas.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -84,11 +78,9 @@ class E40SwitchClassTester {
 
         E40SwitchClass.main(new String[]{});
         String expectedOutput = "Enter name of the instructor" + System.lineSeparator() +
-                                "Asel" + System.lineSeparator() +
-                                "Will take care of every Assignment" + System.lineSeparator();
+                "Will take care of every Assignment" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Asel.\n" +
-                "Please ensure that your program captures the input correctly and determines the responsibility.";
+        String failureMessage = "The output does not match the expected values for Asel.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -100,11 +92,9 @@ class E40SwitchClassTester {
 
         E40SwitchClass.main(new String[]{});
         String expectedOutput = "Enter name of the instructor" + System.lineSeparator() +
-                                "John" + System.lineSeparator() +
-                                "Invalid instructor selected" + System.lineSeparator();
+                "Invalid instructor selected" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for an invalid instructor.\n" +
-                "Please ensure that your program captures the input correctly and handles invalid instructor names.";
+        String failureMessage = "The output does not match the expected values for an invalid instructor.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }

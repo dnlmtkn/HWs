@@ -8,15 +8,11 @@ public class E41SwitchClass {
         // Capture the time of day input
 
         // Recommend meal using switch statement
-        // Case "morning"
-        //    Print "Recommended meal: Breakfast"
-        // Case "afternoon"
-        //    Print "Recommended meal: Lunch"
-        // Case "evening"
-        //    Print "Recommended meal: Dinner"
-        // Case "night"
-        //    Print "Recommended meal: Snack"
-        // Default
+
         //    Print "Invalid time of day entered"
+
+
+
+
     }
 }

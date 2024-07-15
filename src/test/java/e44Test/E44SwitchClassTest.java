@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E44MealPriceCalculatorTester {
+class E44SwitchClassTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -36,11 +36,9 @@ class E44MealPriceCalculatorTester {
 
         E44SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of meal (1 for breakfast, 2 for lunch, 3 for dinner)" + System.lineSeparator() +
-                                "1" + System.lineSeparator() +
-                                "The price of your meal is $5.0" + System.lineSeparator();
+                "The price of your meal is $5.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for breakfast.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for breakfast.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -52,11 +50,9 @@ class E44MealPriceCalculatorTester {
 
         E44SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of meal (1 for breakfast, 2 for lunch, 3 for dinner)" + System.lineSeparator() +
-                                "2" + System.lineSeparator() +
-                                "The price of your meal is $10.0" + System.lineSeparator();
+                "The price of your meal is $10.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for lunch.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for lunch.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -68,11 +64,9 @@ class E44MealPriceCalculatorTester {
 
         E44SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of meal (1 for breakfast, 2 for lunch, 3 for dinner)" + System.lineSeparator() +
-                                "3" + System.lineSeparator() +
-                                "The price of your meal is $15.0" + System.lineSeparator();
+                "The price of your meal is $15.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for dinner.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for dinner.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -84,11 +78,9 @@ class E44MealPriceCalculatorTester {
 
         E44SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of meal (1 for breakfast, 2 for lunch, 3 for dinner)" + System.lineSeparator() +
-                                "4" + System.lineSeparator() +
-                                "Invalid meal type entered" + System.lineSeparator();
+                "Invalid meal type entered" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for an invalid meal type.\n" +
-                "Please ensure that your program captures the input correctly and handles invalid meal types.";
+        String failureMessage = "The output does not match the expected values for invalid meal type.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }

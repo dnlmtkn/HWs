@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E39GradingSystemTester {
+class E39LogicalOperatorsTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -36,11 +36,9 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "85" + System.lineSeparator() +
-                                "Your grade is A" + System.lineSeparator();
+                "Your grade is A" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade A.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade A.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -52,11 +50,9 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "-5" + System.lineSeparator() +
-                                "Please enter valid mark" + System.lineSeparator();
+                "Please enter valid mark" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for an invalid mark.\n" +
-                "Please ensure that your program captures the input correctly and handles invalid marks.";
+        String failureMessage = "The output does not match the expected values for invalid mark.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -68,11 +64,9 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "75" + System.lineSeparator() +
-                                "Your grade is B" + System.lineSeparator();
+                "Your grade is B" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade B.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade B.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -84,11 +78,9 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "55" + System.lineSeparator() +
-                                "Your grade is C" + System.lineSeparator();
+                "Your grade is C" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade C.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade C.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -100,27 +92,23 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "50" + System.lineSeparator() +
-                                "Your grade is D" + System.lineSeparator();
+                "Your grade is D" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade D.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade D.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
 
     @Test
     void testGradeE() {
-        String simulatedInput = "30\n";
+        String simulatedInput = "40\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "30" + System.lineSeparator() +
-                                "Your grade is E" + System.lineSeparator();
+                "Your grade is E" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade E.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade E.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -132,11 +120,9 @@ class E39GradingSystemTester {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                                "20" + System.lineSeparator() +
-                                "Your grade is F" + System.lineSeparator();
+                "Your grade is F" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for grade F.\n" +
-                "Please ensure that your program captures the input correctly and determines the grade.";
+        String failureMessage = "The output does not match the expected values for grade F.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }

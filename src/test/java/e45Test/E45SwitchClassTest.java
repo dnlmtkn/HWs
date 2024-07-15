@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E45CoffeeShopOrderCalculatorTester {
+class E45SwitchClassTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -36,11 +36,9 @@ class E45CoffeeShopOrderCalculatorTester {
 
         E45SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of coffee (1 for Espresso, 2 for Latte, 3 for Cappuccino, 4 for Mocha)" + System.lineSeparator() +
-                                "1" + System.lineSeparator() +
-                                "The price of your coffee is $3.0" + System.lineSeparator();
+                "The price of your coffee is $3.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Espresso.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for Espresso.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -52,11 +50,9 @@ class E45CoffeeShopOrderCalculatorTester {
 
         E45SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of coffee (1 for Espresso, 2 for Latte, 3 for Cappuccino, 4 for Mocha)" + System.lineSeparator() +
-                                "2" + System.lineSeparator() +
-                                "The price of your coffee is $4.0" + System.lineSeparator();
+                "The price of your coffee is $4.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Latte.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for Latte.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -68,11 +64,9 @@ class E45CoffeeShopOrderCalculatorTester {
 
         E45SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of coffee (1 for Espresso, 2 for Latte, 3 for Cappuccino, 4 for Mocha)" + System.lineSeparator() +
-                                "3" + System.lineSeparator() +
-                                "The price of your coffee is $4.5" + System.lineSeparator();
+                "The price of your coffee is $4.5" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Cappuccino.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for Cappuccino.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -84,11 +78,9 @@ class E45CoffeeShopOrderCalculatorTester {
 
         E45SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of coffee (1 for Espresso, 2 for Latte, 3 for Cappuccino, 4 for Mocha)" + System.lineSeparator() +
-                                "4" + System.lineSeparator() +
-                                "The price of your coffee is $5.0" + System.lineSeparator();
+                "The price of your coffee is $5.0" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for Mocha.\n" +
-                "Please ensure that your program captures the input correctly and calculates the price.";
+        String failureMessage = "The output does not match the expected values for Mocha.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -100,11 +92,9 @@ class E45CoffeeShopOrderCalculatorTester {
 
         E45SwitchClass.main(new String[]{});
         String expectedOutput = "Enter the type of coffee (1 for Espresso, 2 for Latte, 3 for Cappuccino, 4 for Mocha)" + System.lineSeparator() +
-                                "5" + System.lineSeparator() +
-                                "Invalid coffee type entered" + System.lineSeparator();
+                "Invalid coffee type entered" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for an invalid coffee type.\n" +
-                "Please ensure that your program captures the input correctly and handles invalid coffee types.";
+        String failureMessage = "The output does not match the expected values for invalid coffee type.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }

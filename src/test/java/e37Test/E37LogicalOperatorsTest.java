@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E37ThirstyOrSleepyTester {
+class E37LogicalOperatorsTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -36,13 +36,10 @@ class E37ThirstyOrSleepyTester {
 
         E37LogicalOperators.main(new String[]{});
         String expectedOutput = "Are you thirsty? (true/false)" + System.lineSeparator() +
-                                "true" + System.lineSeparator() +
-                                "Are you sleepy? (true/false)" + System.lineSeparator() +
-                                "false" + System.lineSeparator() +
-                                "Looks like you need to drink water" + System.lineSeparator();
+                "Are you sleepy? (true/false)" + System.lineSeparator() +
+                "Looks like you need to drink water" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for thirsty and not sleepy.\n" +
-                "Please ensure that your program captures the input correctly and suggests the right drink.";
+        String failureMessage = "The output does not match the expected values for thirsty and not sleepy.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -54,13 +51,10 @@ class E37ThirstyOrSleepyTester {
 
         E37LogicalOperators.main(new String[]{});
         String expectedOutput = "Are you thirsty? (true/false)" + System.lineSeparator() +
-                                "true" + System.lineSeparator() +
-                                "Are you sleepy? (true/false)" + System.lineSeparator() +
-                                "true" + System.lineSeparator() +
-                                "Looks like you need to drink coffee" + System.lineSeparator();
+                "Are you sleepy? (true/false)" + System.lineSeparator() +
+                "Looks like you need to drink coffee" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for thirsty and sleepy.\n" +
-                "Please ensure that your program captures the input correctly and suggests the right drink.";
+        String failureMessage = "The output does not match the expected values for thirsty and sleepy.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
@@ -72,31 +66,25 @@ class E37ThirstyOrSleepyTester {
 
         E37LogicalOperators.main(new String[]{});
         String expectedOutput = "Are you thirsty? (true/false)" + System.lineSeparator() +
-                                "false" + System.lineSeparator() +
-                                "Are you sleepy? (true/false)" + System.lineSeparator() +
-                                "true" + System.lineSeparator() +
-                                "Looks like you need to drink tea" + System.lineSeparator();
+                "Are you sleepy? (true/false)" + System.lineSeparator() +
+                "Looks like you need to drink tea" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for not thirsty but sleepy.\n" +
-                "Please ensure that your program captures the input correctly and suggests the right drink.";
+        String failureMessage = "The output does not match the expected values for not thirsty but sleepy.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
 
     @Test
-    void testNotThirstyNotSleepy() {
+    void testNotThirstyAndNotSleepy() {
         String simulatedInput = "false\nfalse\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E37LogicalOperators.main(new String[]{});
         String expectedOutput = "Are you thirsty? (true/false)" + System.lineSeparator() +
-                                "false" + System.lineSeparator() +
-                                "Are you sleepy? (true/false)" + System.lineSeparator() +
-                                "false" + System.lineSeparator() +
-                                "Looks like you need to drink nothing" + System.lineSeparator();
+                "Are you sleepy? (true/false)" + System.lineSeparator() +
+                "Looks like you need to drink nothing" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for not thirsty and not sleepy.\n" +
-                "Please ensure that your program captures the input correctly and suggests the right drink.";
+        String failureMessage = "The output does not match the expected values for not thirsty and not sleepy.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
