@@ -1,6 +1,6 @@
 package e35test;
 
-import org.example.e36.E36LogicalOperators;
+import org.example.e35.E35LogicalOperators;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,55 +30,75 @@ class E35LogicalOperatorsTest {
     }
 
     @Test
-    void testPrioritizingEssentials() {
-        String simulatedInput = "1200\n600\n300\n200\n";
+    void testMaybeEligible() {
+        String simulatedInput = "true\n650\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-        E36LogicalOperators.main(new String[]{});
-        String expectedOutput = "Please enter your monthly rent expense" + System.lineSeparator() +
-                                "Please enter your monthly food expense" + System.lineSeparator() +
-                                "Please enter your monthly transportation expense" + System.lineSeparator() +
-                                "Please enter your monthly entertainment expense" + System.lineSeparator() +
-                                "You are prioritizing essentials well." + System.lineSeparator();
+        E35LogicalOperators.main(new String[]{});
+        String expectedOutput = "Do you need a loan? (true/false)" + System.lineSeparator() +
+                "What is your credit score?" + System.lineSeparator() +
+                "The eligibility is Maybe eligible" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for prioritizing essentials.\n" +
-                "Please ensure that your program captures the input correctly and analyzes the expenses.";
+        String failureMessage = "The output does not match the expected values for Maybe eligible.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
 
     @Test
-    void testOnTheRightTrack() {
-        String simulatedInput = "1200\n800\n300\n400\n";
+    void testNotEligible() {
+        String simulatedInput = "true\n500\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-        E36LogicalOperators.main(new String[]{});
-        String expectedOutput = "Please enter your monthly rent expense" + System.lineSeparator() +
-                                "Please enter your monthly food expense" + System.lineSeparator() +
-                                "Please enter your monthly transportation expense" + System.lineSeparator() +
-                                "Please enter your monthly entertainment expense" + System.lineSeparator() +
-                                "You are on the right track, but could improve." + System.lineSeparator();
+        E35LogicalOperators.main(new String[]{});
+        String expectedOutput = "Do you need a loan? (true/false)" + System.lineSeparator() +
+                "What is your credit score?" + System.lineSeparator() +
+                "The eligibility is Not eligible" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for being on the right track.\n" +
-                "Please ensure that your program captures the input correctly and analyzes the expenses.";
+        String failureMessage = "The output does not match the expected values for Not eligible.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
 
     @Test
-    void testRethinkSpendingPriorities() {
-        String simulatedInput = "1000\n1200\n200\n300\n";
+    void testEligible() {
+        String simulatedInput = "true\n750\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-        E36LogicalOperators.main(new String[]{});
-        String expectedOutput = "Please enter your monthly rent expense" + System.lineSeparator() +
-                                "Please enter your monthly food expense" + System.lineSeparator() +
-                                "Please enter your monthly transportation expense" + System.lineSeparator() +
-                                "Please enter your monthly entertainment expense" + System.lineSeparator() +
-                                "You need to rethink your spending priorities." + System.lineSeparator();
+        E35LogicalOperators.main(new String[]{});
+        String expectedOutput = "Do you need a loan? (true/false)" + System.lineSeparator() +
+                "What is your credit score?" + System.lineSeparator() +
+                "The eligibility is Eligible" + System.lineSeparator();
 
-        String failureMessage = "The output does not match the expected values for needing to rethink spending priorities.\n" +
-                "Please ensure that your program captures the input correctly and analyzes the expenses.";
+        String failureMessage = "The output does not match the expected values for Eligible.";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+    }
+
+    @Test
+    void testDefinitelyEligible() {
+        String simulatedInput = "true\n850\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E35LogicalOperators.main(new String[]{});
+        String expectedOutput = "Do you need a loan? (true/false)" + System.lineSeparator() +
+                "What is your credit score?" + System.lineSeparator() +
+                "The eligibility is Definitely eligible" + System.lineSeparator();
+
+        String failureMessage = "The output does not match the expected values for Definitely eligible.";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+    }
+
+    @Test
+    void testUnknownEligibility() {
+        String simulatedInput = "false\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E35LogicalOperators.main(new String[]{});
+        String expectedOutput = "Do you need a loan? (true/false)" + System.lineSeparator() +
+                "The eligibility is Unknown" + System.lineSeparator();
+
+        String failureMessage = "The output does not match the expected values for Unknown eligibility.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
