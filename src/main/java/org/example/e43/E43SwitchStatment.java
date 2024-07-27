@@ -13,5 +13,6 @@ public class E43SwitchStatment {
 
         // Print the bill
         // Output: Your electricity bill is $____
+
     }
 }

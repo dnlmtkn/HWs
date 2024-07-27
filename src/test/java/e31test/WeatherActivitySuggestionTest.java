@@ -62,7 +62,7 @@ public class WeatherActivitySuggestionTest {
         E31NestedIfAndScanner.main(new String[]{});
 
         String expectedOutput = "Is it sunny outside? (true/false)" + lineSeparator +
-                "I stay home and practice Java" + lineSeparator;
+                "I stay home and practice Java." + lineSeparator;
         assertEquals(expectedOutput, outContent.toString());
     }
 

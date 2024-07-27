@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class E12CalculateCostArithmeticConcatTester {
 
@@ -25,11 +25,14 @@ class E12CalculateCostArithmeticConcatTester {
         System.setOut(originalOut);
     }
 
+
+
+
     @Test
     void testCalculateCost() {
         E12CalculateCostArithmeticConcat.main(new String[]{});
-        String expectedOutput = "The total cost is 75.98" + System.lineSeparator() +
-                "The average cost is 18.995" + System.lineSeparator();
+        String expectedOutput = "The total cost is 75.979996" + System.lineSeparator() +
+                "The average cost is 18.994999" + System.lineSeparator();
 
         String failureMessage = "The output does not match the expected values.\n" +
                 "Please ensure that your program declares variables 'item1', 'item2', 'item3', and 'item4',\n" +

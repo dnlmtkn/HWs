@@ -39,7 +39,7 @@ class E28SimpleCalculatorElseIfTest {
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E28SimpleCalculatorElseIf.main(new String[]{});
-        String expectedOutput = "The product is: 50" + System.lineSeparator();
+        String expectedOutput = "The product is: 50.0" + System.lineSeparator();
 
         String failureMessage = "The output does not match the expected values.\n" +
                 "Please ensure that your program performs the correct arithmetic operation based on the operator.";

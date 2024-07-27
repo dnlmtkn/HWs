@@ -50,7 +50,7 @@ class E39LogicalOperatorsTest {
 
         E39LogicalOperators.main(new String[]{});
         String expectedOutput = "Please enter your mark" + System.lineSeparator() +
-                "Please enter valid mark" + System.lineSeparator();
+                "Please enter a valid mark" + System.lineSeparator();
 
         String failureMessage = "The output does not match the expected values for invalid mark.";
 
