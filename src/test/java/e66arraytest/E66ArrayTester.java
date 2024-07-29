@@ -28,7 +28,7 @@ class E66ArrayTester {
     @Test
     void testArrayValues() {
         E66Array.main(new String[]{});
-        String expectedOutput = "45 78 12 67 55 " + System.lineSeparator();
+        String expectedOutput = "45 78 12 67 55 ";
 
         String failureMessage = "The output does not match the expected values for the array.\n" +
                 "Please ensure that your program correctly creates the array and prints all values.";

@@ -30,16 +30,42 @@ class E64ForLoopTester {
     }
 
     @Test
-    void testForLoop() {
-        String simulatedInput = "5\n8\n-5\n";
+    void testForLoopWithInput5() {
+        String simulatedInput = "5\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E64ForLoop.main(new String[]{});
-        String expectedOutput = "Int: 0 1 2 3 4 5 6 7 8 9 " + System.lineSeparator() +
-                                "Int: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 " + System.lineSeparator() +
-                                "Int: " + System.lineSeparator();
+        String expectedOutput = "Int: 0 1 2 3 4 5 6 7 8 9 ";
 
-        String failureMessage = "The output does not match the expected values for the for loop.\n" +
+        String failureMessage = "The output does not match the expected values for the input 5.\n" +
+                "Please ensure that your program correctly uses the for loop to print a series of numbers based on user input.";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+    }
+
+    @Test
+    void testForLoopWithInput8() {
+        String simulatedInput = "8\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E64ForLoop.main(new String[]{});
+        String expectedOutput = "Int: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ";
+
+        String failureMessage = "The output does not match the expected values for the input 8.\n" +
+                "Please ensure that your program correctly uses the for loop to print a series of numbers based on user input.";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+    }
+
+    @Test
+    void testForLoopWithInputNegative5() {
+        String simulatedInput = "-5\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E64ForLoop.main(new String[]{});
+        String expectedOutput = "Int: ";
+
+        String failureMessage = "The output does not match the expected values for the input -5.\n" +
                 "Please ensure that your program correctly uses the for loop to print a series of numbers based on user input.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
