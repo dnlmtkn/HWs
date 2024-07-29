@@ -28,7 +28,7 @@ class E69ArraysTester {
     @Test
     void testArrayValues() {
         E69Arrays.main(new String[]{});
-        String expectedOutput = "This is array of strings " + System.lineSeparator();
+        String expectedOutput = "This is array of strings " ;
 
         String failureMessage = "The output does not match the expected values for the array.\n" +
                 "Please ensure that your program correctly creates the array and prints all values in one line.";

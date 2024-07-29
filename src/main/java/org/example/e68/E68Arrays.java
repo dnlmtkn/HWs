@@ -7,5 +7,9 @@ public class E68Arrays {
 
         // Print the characters at the indices that form the word "syntax"
 
+
+
+
+
     }
 }

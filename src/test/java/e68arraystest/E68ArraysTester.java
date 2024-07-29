@@ -28,7 +28,7 @@ class E68ArraysTester {
     @Test
     void testArrayValues() {
         E68Arrays.main(new String[]{});
-        String expectedOutput = "syntax" + System.lineSeparator();
+        String expectedOutput = "syntax";
 
         String failureMessage = "The output does not match the expected values for the array.\n" +
                 "Please ensure that your program correctly creates the array and prints the selected characters to form the word 'syntax'.";

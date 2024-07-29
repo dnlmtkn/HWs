@@ -35,13 +35,13 @@ class E72ArraysTester {
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E72Arrays.main(new String[]{});
-        String expectedOutput = "Please enter day 1 of the week" + System.lineSeparator() +
-                                "Please enter day 2 of the week" + System.lineSeparator() +
-                                "Please enter day 3 of the week" + System.lineSeparator() +
-                                "Please enter day 4 of the week" + System.lineSeparator() +
-                                "Please enter day 5 of the week" + System.lineSeparator() +
-                                "Please enter day 6 of the week" + System.lineSeparator() +
-                                "Please enter day 7 of the week" + System.lineSeparator() +
+        String expectedOutput = "Please enter day 1 of the week:" + System.lineSeparator() +
+                                "Please enter day 2 of the week:" + System.lineSeparator() +
+                                "Please enter day 3 of the week:" + System.lineSeparator() +
+                                "Please enter day 4 of the week:" + System.lineSeparator() +
+                                "Please enter day 5 of the week:" + System.lineSeparator() +
+                                "Please enter day 6 of the week:" + System.lineSeparator() +
+                                "Please enter day 7 of the week:" + System.lineSeparator() +
                                 "Sunday" + System.lineSeparator() +
                                 "Monday" + System.lineSeparator() +
                                 "Tuesday" + System.lineSeparator() +

@@ -10,5 +10,7 @@ public class E70Arrays {
 
         // Use another for loop to iterate through the array and print each value on a new line
 
+        // Declare and initialize the array of integers with size 11
+
     }
 }

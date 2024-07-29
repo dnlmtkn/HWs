@@ -6,5 +6,7 @@ public class E71Arrays {
 
 
         // Use a loop to iterate through the array and print the values at specific indices to get the result 78, 55, 77
+
+
     }
 }

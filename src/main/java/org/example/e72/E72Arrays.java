@@ -1,5 +1,7 @@
 package org.example.e72;
 
+import java.util.Scanner;
+
 public class E72Arrays {
     public static void main(String[] args) {
         // Create a Scanner object to read input from the console
@@ -11,6 +13,10 @@ public class E72Arrays {
         // Use a loop to prompt the user to input the days of the week one by one and store each input in the array
 
         // Use another loop to iterate through the array and print each value on a new line
+
+        // Create a Scanner object to read input from the console
+
+
 
     }
 }

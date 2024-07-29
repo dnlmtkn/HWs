@@ -28,7 +28,7 @@ class E71ArraysTester {
     @Test
     void testArrayValues() {
         E71Arrays.main(new String[]{});
-        String expectedOutput = "78 55 77 " + System.lineSeparator();
+        String expectedOutput = "78 55 77" ;
 
         String failureMessage = "The output does not match the expected values for the array.\n" +
                 "Please ensure that your program correctly creates the array and extracts the specific values.";
