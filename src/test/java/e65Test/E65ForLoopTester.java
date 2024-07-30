@@ -21,6 +21,7 @@ class E65ForLoopTester {
     @BeforeEach
     void setUpStreams() {
         System.setOut(new PrintStream(outContent));
+        System.setIn(originalIn);
     }
 
     @AfterEach
@@ -31,16 +32,36 @@ class E65ForLoopTester {
 
     @Test
     void testForLoop() {
-        String simulatedInput = "7\n12\n20\n";
+        String simulatedInput = "7\n";
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         E65ForLoop.main(new String[]{});
-        String expectedOutput = "In: 6 5 4 3 2 1 0 " + System.lineSeparator() +
-                                "In: 11 10 9 8 7 6 5 4 3 2 1 0 " + System.lineSeparator() +
-                                "In: 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 " + System.lineSeparator();
+        String expectedOutput = "In: 6 5 4 3 2 1 0 " ;
 
         String failureMessage = "The output does not match the expected values for the for loop.\n" +
                 "Please ensure that your program correctly uses the for loop to print a series of numbers in reverse based on user input.";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+
+        // Reset the output stream for the next test
+        outContent.reset();
+
+        simulatedInput = "12\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E65ForLoop.main(new String[]{});
+        expectedOutput = "In: 11 10 9 8 7 6 5 4 3 2 1 0 ";
+
+        assertEquals(expectedOutput, outContent.toString(), failureMessage);
+
+        // Reset the output stream for the next test
+        outContent.reset();
+
+        simulatedInput = "20\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        E65ForLoop.main(new String[]{});
+        expectedOutput = "In: 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 ";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
