@@ -28,7 +28,7 @@ class E92StringManipulationsTester {
     @Test
     void testStringEndsWith() {
         E92StringManipulations.main(new String[]{});
-        String expectedOutput = "false" + System.lineSeparator() +
+        String expectedOutput = "true" + System.lineSeparator() +
                                 "false" + System.lineSeparator() +
                                 "false" + System.lineSeparator() +
                                 "true" + System.lineSeparator();

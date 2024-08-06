@@ -22,7 +22,7 @@ In this project, you will validate if a string ends with specific substrings and
 
 ## Example Output
 ```
-false
+true
 false
 false
 true
