@@ -5,9 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,32 +18,49 @@ class E97StringManipulationsTester {
 
     @BeforeEach
     void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outContent));  // Redirect output stream to capture the output
     }
 
     @AfterEach
     void restoreStreams() {
-        System.setOut(originalOut);
+        System.setOut(originalOut);  // Reset the original output stream
+        System.setIn(System.in);  // Reset input stream to the original
+        outContent.reset();  // Clear the output buffer between tests
     }
 
     @Test
-    void testBrowserValidation() {
-        // Test case for Chrome
+    void testChromeBrowserValidation() {
+        // Simulate the input for Chrome
         String input = "Chrome";
-        Scanner scanner = new Scanner(input);
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E97StringManipulations.main(new String[]{});
+
+        // Expected output for Chrome
         String expectedOutput = "Please enter a browser name:" + System.lineSeparator() +
-                                "Proceed with Chrome browser" + System.lineSeparator();
+                "Proceed with Chrome browser" + System.lineSeparator();
 
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for Safari
-        input = "Safari";
-        scanner = new Scanner(input);
+    @Test
+    void testSafariBrowserValidation() {
+        // Simulate the input for Safari
+        String input = "Safari";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E97StringManipulations.main(new String[]{});
-        expectedOutput = "Please enter a browser name:" + System.lineSeparator() +
-                         "Invalid browser" + System.lineSeparator();
 
+        // Expected output for Safari
+        String expectedOutput = "Please enter a browser name:" + System.lineSeparator() +
+                "Invalid browser" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
     }
 }

@@ -5,9 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,41 +18,67 @@ class E100StringManipulationsTester {
 
     @BeforeEach
     void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outContent));  // Redirect output stream to capture the output
     }
 
     @AfterEach
     void restoreStreams() {
-        System.setOut(originalOut);
+        System.setOut(originalOut);  // Reset the original output stream
+        System.setIn(System.in);  // Reset input stream to the original
+        outContent.reset();  // Clear the output buffer between tests
     }
 
     @Test
-    void testStringReversal() {
-        // Test case for manhattan
+    void testStringReversalManhattan() {
+        // Simulate the input for "manhattan"
         String input = "manhattan";
-        Scanner scanner = new Scanner(input);
-        E100StringManipulations.main(new String[]{});
-        String expectedOutput = "In:" + System.lineSeparator() +
-                                "nattahnam" + System.lineSeparator();
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
 
+        // Call the main method to run the program
+        E100StringManipulations.main(new String[]{});
+
+        // Expected output for "manhattan"
+        String expectedOutput = "In: " + System.lineSeparator() +
+                "nattahnam" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for processor
-        input = "processor";
-        scanner = new Scanner(input);
+    @Test
+    void testStringReversalProcessor() {
+        // Simulate the input for "processor"
+        String input = "processor";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E100StringManipulations.main(new String[]{});
-        expectedOutput = "In:" + System.lineSeparator() +
-                         "rossecorp" + System.lineSeparator();
 
+        // Expected output for "processor"
+        String expectedOutput = "In: " + System.lineSeparator() +
+                "rossecorp" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for racecar~~
-        input = "racecar~~";
-        scanner = new Scanner(input);
+    @Test
+    void testStringReversalRacecarTilde() {
+        // Simulate the input for "racecar~~"
+        String input = "racecar~~";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E100StringManipulations.main(new String[]{});
-        expectedOutput = "In:" + System.lineSeparator() +
-                         "~~racecar" + System.lineSeparator();
 
+        // Expected output for "racecar~~"
+        String expectedOutput = "In: " + System.lineSeparator() +
+                "~~racecar" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
     }
 }

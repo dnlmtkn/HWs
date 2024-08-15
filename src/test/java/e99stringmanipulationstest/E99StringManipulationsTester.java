@@ -5,9 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,30 +18,49 @@ class E99StringManipulationsTester {
 
     @BeforeEach
     void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outContent));  // Redirect output stream to capture the output
     }
 
     @AfterEach
     void restoreStreams() {
-        System.setOut(originalOut);
+        System.setOut(originalOut);  // Reset the original output stream
+        System.setIn(System.in);  // Reset input stream to the original
+        outContent.reset();  // Clear the output buffer between tests
     }
 
     @Test
-    void testPalindromeChecker() {
-        // Test case for racecar
+    void testRacecarPalindrome() {
+        // Simulate the input for "racecar"
         String input = "racecar";
-        Scanner scanner = new Scanner(input);
-        E99StringManipulations.main(new String[]{});
-        String expectedOutput = "true" + System.lineSeparator();
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
 
+        // Call the main method to run the program
+        E99StringManipulations.main(new String[]{});
+
+        // Expected output for "racecar"
+        String expectedOutput = "Please enter a string:" + System.lineSeparator() +
+                "true" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for hello
-        input = "hello";
-        scanner = new Scanner(input);
+    @Test
+    void testHelloNotPalindrome() {
+        // Simulate the input for "hello"
+        String input = "hello";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E99StringManipulations.main(new String[]{});
-        expectedOutput = "false" + System.lineSeparator();
 
+        // Expected output for "hello"
+        String expectedOutput = "Please enter a string:" + System.lineSeparator() +
+                "false" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
     }
 }

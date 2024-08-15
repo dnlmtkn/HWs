@@ -5,7 +5,7 @@ public class E95StringManipulations {
         // Create a Scanner object to read input from the console
 
         // Prompt the user to input a string value
-        System.out.println("Please enter a string:");
+
 
         // Read the input string
 

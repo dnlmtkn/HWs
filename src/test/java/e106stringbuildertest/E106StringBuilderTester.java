@@ -17,19 +17,23 @@ class E106StringBuilderTester {
 
     @BeforeEach
     void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outContent));  // Redirect output to capture it for the test
     }
 
     @AfterEach
     void restoreStreams() {
-        System.setOut(originalOut);
+        System.setOut(originalOut);  // Restore the original system output
     }
 
     @Test
-    void testStringBufferManipulation() {
+    void testStringBuilderManipulation() {
+        // Call the main method of E106StringBuilder to run the program
         E106StringBuilder.main(new String[]{});
+
+        // Expected output after manipulation
         String expectedOutput = "HELLO WORLD" + System.lineSeparator();
 
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString(), "The output does not match the expected result. Ensure that you append 'Hello' and 'World' and convert the result to uppercase.");
     }
 }

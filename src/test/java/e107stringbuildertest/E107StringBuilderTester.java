@@ -1,6 +1,6 @@
 package e107stringbuildertest;
 
-import org.example.e107.E107StringBuilder;
+import org.example.e107.E107StringBuilder;  // Ensure this is the correct package and class path
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,19 +17,25 @@ class E107StringBuilderTester {
 
     @BeforeEach
     void setUpStreams() {
+        // Redirect System.out to capture output
         System.setOut(new PrintStream(outContent));
     }
 
     @AfterEach
     void restoreStreams() {
+        // Restore the original System.out after the test
         System.setOut(originalOut);
     }
 
     @Test
     void testStringBufferReverse() {
+        // Call the main method of E107StringBuilder to run the program
         E107StringBuilder.main(new String[]{});
+
+        // Expected output after reversing the string "Hello Friends"
         String expectedOutput = "sdneirF olleH" + System.lineSeparator();
 
-        assertEquals(expectedOutput, outContent.toString(), "The output does not match the expected result. Ensure that you reverse the string 'Hello Friends' using the StringBuffer class.");
+        // Assert that the output matches the expected reversed result
+        assertEquals(expectedOutput, outContent.toString(), "The output does not match the expected result. Ensure that you reverse the string 'Hello Friends' using the StringBuffer or StringBuilder class.");
     }
 }

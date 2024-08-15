@@ -5,9 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,41 +18,67 @@ class E105StringManipulationsTester {
 
     @BeforeEach
     void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outContent));  // Redirect output stream to capture the output
     }
 
     @AfterEach
     void restoreStreams() {
-        System.setOut(originalOut);
+        System.setOut(originalOut);  // Reset the original output stream
+        System.setIn(System.in);  // Reset input stream to the original
+        outContent.reset();  // Clear the output buffer between tests
     }
 
     @Test
-    void testPrintOnlyVowels() {
-        // Test case for "howdyho"
+    void testPrintOnlyVowelsHowdyho() {
+        // Simulate the input for "howdyho"
         String input = "howdyho";
-        Scanner scanner = new Scanner(input);
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E105StringManipulations.main(new String[]{});
+
+        // Expected output for "howdyho"
         String expectedOutput = "In:" + System.lineSeparator() +
-                                "oo" + System.lineSeparator();
+                "oo" + System.lineSeparator();
 
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for "huehuehuehue"
-        input = "huehuehuehue";
-        scanner = new Scanner(input);
+    @Test
+    void testPrintOnlyVowelsHuehue() {
+        // Simulate the input for "huehuehuehue"
+        String input = "huehuehuehue";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E105StringManipulations.main(new String[]{});
-        expectedOutput = "In:" + System.lineSeparator() +
-                         "ueueueue" + System.lineSeparator();
 
+        // Expected output for "huehuehuehue"
+        String expectedOutput = "In:" + System.lineSeparator() +
+                "ueueueue" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
+    }
 
-        // Test case for "poopoo what idk what im doing"
-        input = "poopoo what idk what im doing";
-        scanner = new Scanner(input);
+    @Test
+    void testPrintOnlyVowelsPoopoo() {
+        // Simulate the input for "poopoo what idk what im doing"
+        String input = "poopoo what idk what im doing";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);  // Set the input stream to simulate user input
+
+        // Call the main method to run the program
         E105StringManipulations.main(new String[]{});
-        expectedOutput = "In:" + System.lineSeparator() +
-                         "ooooaiaioi" + System.lineSeparator();
 
+        // Expected output for "poopoo what idk what im doing"
+        String expectedOutput = "In:" + System.lineSeparator() +
+                "ooooaiaioi" + System.lineSeparator();
+
+        // Assert that the output matches the expected result
         assertEquals(expectedOutput, outContent.toString());
     }
 }
