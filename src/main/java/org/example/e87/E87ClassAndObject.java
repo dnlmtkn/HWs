@@ -2,26 +2,27 @@ package org.example.e87;
 
 public class E87ClassAndObject {
     public static void main(String[] args) {
-        // Create a class named 'Car'
 
-        // Declare a String variable named 'carColor'
-        // Declare an integer variable named 'carYear'
-        // Declare a String variable named 'carMake'
+        class Car {
+            String carColor;
+            int carYear;
+            String carMake;
+        }
 
-        // Create the first object of the class 'Car'
+        Car firstObject = new Car();
 
-        // Assign the value "Black" to the 'carColor' variable of the first object
-        // Assign the value 2019 to the 'carYear' variable of the first object
-        // Assign the value "BMW" to the 'carMake' variable of the first object
+        firstObject.carColor = "Black";
+        firstObject.carYear = 2019;
+        firstObject.carMake = "BMW";
 
-        // Create the second object of the class 'Car'
+        Car secondObject = new Car();
 
-        // Assign the value "White" to the 'carColor' variable of the second object
-        // Assign the value 2018 to the 'carYear' variable of the second object
-        // Assign the value "Toyota" to the 'carMake' variable of the second object
+        secondObject.carColor = "White";
+        secondObject.carYear = 2018;
+        secondObject.carMake = "Toyota";
 
-        // Print the values of the properties for both objects in the specified format
-
+        System.out.println("Car color is " + firstObject.carColor + " and car year is " + firstObject.carYear + " and car model is " + firstObject.carMake);
+        System.out.println("Car color is " + secondObject.carColor + " and car year is " + secondObject.carYear + " and car model is " + secondObject.carMake);
 
 
     }

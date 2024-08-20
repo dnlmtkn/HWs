@@ -6,7 +6,9 @@ public class E94StringManipulations {
         String given = "I love Java classes at Syntax";
 
         // Use the substring() method to retrieve the substring "classes at Syntax" and print it
+        System.out.println(given.substring(12, 29));
 
         // Use the substring() method to retrieve the substring "I love Java" and print it
+        System.out.println(given.substring(0, 11));
     }
 }

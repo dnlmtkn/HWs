@@ -10,6 +10,14 @@ public class E90StringManipulations {
 
         // Use the isEmpty() method to check if 's2' is empty and print the result
 
+        String s1 = "hello";
+        String s2 = "";
+
+        boolean isEmpty = s1.isEmpty();
+        boolean isEmpty2 = s2.isEmpty();
+
+        System.out.println(isEmpty);
+        System.out.println(isEmpty2);
 
 
     }

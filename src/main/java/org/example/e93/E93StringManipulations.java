@@ -12,11 +12,15 @@ public class E93StringManipulations {
         String target2 = "ABRA";
 
         // Use the indexOf() method to find the position of the first occurrence of 'c' and print the result
+        System.out.println(str.indexOf('c'));
 
         // Use the indexOf() method to find the position of the first occurrence of ' ' (space) and print the result
+        System.out.println(str.indexOf(" "));
 
         // Use the indexOf() method to find the position of the first occurrence of the variable 'target1' and print the result
+        System.out.println(str.indexOf(target1));
 
         // Use the indexOf() method to find the position of the first occurrence of the variable 'target2' and print the result
+        System.out.println(str.indexOf(target2));
     }
 }

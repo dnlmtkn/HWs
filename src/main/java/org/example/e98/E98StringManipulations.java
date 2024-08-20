@@ -8,6 +8,9 @@ public class E98StringManipulations {
 
         // Print the new string
 
+        String given = "Hello Syntax friends";
+        System.out.println(given.replace("Hello Syntax friends", "Welcome Syntax family"));
+
 
     }
 }
