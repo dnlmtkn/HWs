@@ -7,7 +7,20 @@ public class E84NestedForLoops {
 
         // Use nested loops to fill the 2D array with multiplication table values
 
+        for (int i = 0; i < table.length ; i++) {
+            for (int j =0 ; j <table[i].length ; j++) {
+
+            }
+        }
         // Use nested loops to iterate through the 2D array and print the pattern
+
+        for (int [] table1:table){
+            for (int table2:table1){
+                System.out.println(table2+" ");
+            }
+        }
+
+
 
     }
 }
